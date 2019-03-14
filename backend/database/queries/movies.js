@@ -65,11 +65,26 @@ const getOneMovie = (req, res, next) => {
         })
     }
 
-const getMovieswAvRating = ( req, res, next ) => {
-db.any('SELECT movies.id, movies.title, movies.img_url, movie_ratings.movie_rating FROM movies JOIN')
-    ('SELECT movie_id,  ROUND(AVG(ratings.stars), 2) AS movie_rating FROM ratings GROUP BY movie_id) AS movie_ratings ON movies.id = movie_ratings.movie_id')
+const getMoviesAndRating = ( req, res, next ) => {
+db.any(`SELECT movies.id, movies.title, movies.img_url, movie_ratings.movie_rating FROM movies JOIN (SELECT movie_id,  ROUND(AVG(ratings.stars), 2) AS movie_rating FROM ratings GROUP BY movie_id) AS movie_ratings ON movies.id = movie_ratings.movie_id`)
+    .then(movsAndRats => {
+        res.status(200)
+        .json({
+            status: 'Success', 
+            message: 'All movies with ratings.',
+            movies: movsAndRats
+        })
+    })
+    .catch(err => {
+        res.status(400)
+        .json({
+            status: 'Failure', 
+            message: 'Failed. Try again'
+        })
+        next(err)
+    })
 }
 
 module.exports = {
-    getAllMovies, getOneMovie, getAllMoviesForGenre
+    getAllMovies, getOneMovie, getAllMoviesForGenre, getMoviesAndRating
 }
