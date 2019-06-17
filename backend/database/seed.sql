@@ -30,7 +30,7 @@ CREATE TABLE comments (
     
 );
 
-INSERT INTO genres (catergory) VALUES ('action'), ('comedy'), ('horror'), ('musicals'), ('sci-fi');
+INSERT INTO genres (catergory) VALUES ('Action'), ('Comedy'), ('Horror'), ('Musicals'), ('Sci-Fi');
 
 INSERT INTO movies (title, genre_id, img_url) VALUES ('Lethal Weapon', 1, 'https://images-na.ssl-images-amazon.com/images/I/51UM0NLMlVL.jpg'), ('Crouching Tiger, Hidden Dragon', 1, 'https://m.media-amazon.com/images/M/MV5BNDdhMzMxOTctNDMyNS00NTZmLTljNWEtNTc4MDBmZTYxY2NmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg'),('The Mask', 2, 'https://images-na.ssl-images-amazon.com/images/I/51nyyrDhfUL.jpg'),('Anchorman', 2, 'https://images-na.ssl-images-amazon.com/images/I/51jNgDex5IL.jpg'), ('Hereditary', 3, 'https://m.media-amazon.com/images/M/MV5BOTU5MDg3OGItZWQ1Ny00ZGVmLTg2YTUtMzBkYzQ1YWIwZjlhXkEyXkFqcGdeQXVyNTAzMTY4MDA@._V1_.jpg'), ('The Shining', 3, 'http://i.ebayimg.com/00/s/NTAwWDM1Mw==/z/s0wAAOxy7nNTWITn/$_3.JPG?set_id=2'), ('Rent', 4, 'https://cdn.shopify.com/s/files/1/0598/2925/products/8th9FSg.jpg?v=1521498715'), ('Phantom of The Opera', 4, 'https://m.media-amazon.com/images/M/MV5BNDczNzg4OTM3MV5BMl5BanBnXkFtZTcwOTQzMTEzMw@@._V1_.jpg'), ('Ex Machina', 5, 'https://m.media-amazon.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_.jpg'), ('The Matrix', 5, 'https://imgc.allpostersimages.com/img/print/u-g-F4S5W20.jpg?w=550&h=550&p=0');
 

@@ -1,0 +1,11 @@
+.moviePoster {
+    width: 250px;
+}
+
+.feed {
+    display: flex;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px
+}

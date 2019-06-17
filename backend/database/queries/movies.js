@@ -1,7 +1,7 @@
 const db = require('.')
 
 const getAllMovies = (req, res, next) => {
-    db.any('SELECT * FROM movies')
+    db.any('SELECT movies.id AS movie_id, title, img_url, genre_id, AVG(stars), ROUND(stars, 0), catergory, genres.id FROM movies JOIN genres ON movies.genre_id = genres.id JOIN ratings ON ratings.movie_id = movies.id GROUP BY movies.id, genres.catergory, genres.id, ratings.stars')
     .then(movies  =>  {
         res.status(200)
         .json({
